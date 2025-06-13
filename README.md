@@ -1,0 +1,2 @@
+# hackthoncomsys_face_classification_challenge
+comsys hacthon 2025
