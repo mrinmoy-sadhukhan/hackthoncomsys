@@ -14,14 +14,18 @@ This below python code helps to create virtual environment in windows to install
 `pip install requirments.txt`
 
 
+## Dataset Download
+Dataset downloaded from hackathon website. It is unzip in `Comsys_Hackathon5` folder in this github repo. But due to limitation we can not provide full dataset here only dataset structure is given.
+
 ## Gender Classification 
+Befor procced to python file pls use `unzip.py` to extract model from zip file
 Task A – Gender Classification 
 The evaluation Metrics are used to test the model performance are 1) Accuracy 2) Precision 3) Recall 4) F1-Score.
 
 |Dataset| Accuracy| Precision| Recall| F1-Score|
 |--------------|:----:|:------:|:-----:|:------:|
-|Training set| | | | |
-|Validation set | | |  ||
+|Training set| 0.9590|0.9663 |0.9590 |0.9607 |
+|Validation set |0.9360 |0.9460 |0.9360  |0.9385|
 |Test set | | | | |
 
 
