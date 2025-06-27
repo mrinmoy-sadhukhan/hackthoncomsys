@@ -43,7 +43,7 @@ To perform testing on unseen data and generate the result of said metrics we can
 
 `python testunseen.py --dataset '/path'`
 
-To run linux environment with python 3.X.X version pls use `python3` insted of  ` python` in the command line.  
+To run linux environment with python 3.10.X version pls use `python3` insted of  ` python` in the command line.  
 ## Face Recognition
 
 Task A – Gender Classification 
