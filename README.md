@@ -39,9 +39,9 @@ Before run the below script we have to open the Task_A folder. Use below command
 To perform the training and validation a clean code is given in a python jupyter file named as :
 `taskatrainscript.ipynb`
 
-To perform testing on unseen data and generate the result of said metrics we can run `testunseen.py` file. To run the file please refer below command line code
+To perform testing on unseen data and generate the result of said metrics we can run `testunseen.py` file. pls change dataset path inside the file. To run the file please refer below command line code
 
-`python testunseen.py --dataset '/path'`
+`python testunseen.py
 
 To run linux environment with python 3.10.X version pls use `python3` insted of  ` python` in the command line.  
 ## Face Recognition
