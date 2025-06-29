@@ -109,8 +109,8 @@ Please refer to the `Task_B/` folder for scripts related to face recognition. De
 
 | Dataset        | Top-1 Accuracy | Macro-averaged F1-Score |
 |----------------|----------|-----------|
-| Training set   |    |     |
-| Validation set | 0.8700   |    0.8700 |
+| Training set   | 0.8900   |   0.8900  |
+| Validation set | 0.8700   |   0.8700  |
 | Test set       | *Hidden* | *Hidden*  |
 
 > 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics are not shown.
