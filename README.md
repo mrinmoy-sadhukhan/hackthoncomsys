@@ -1,73 +1,141 @@
-Hackthon Submission
-========================
-In this github repo there are two folder one is Task A and another is Task B. Task A is related to the code of gender classification and Task B related to Face Recognition. The details of each task such as training and testing script, evaluation script is given in below sections. 
 
-In this repo there is `requirments.txt`file to match the python libary rquired to run the task A and task B.
-This below python code helps to create virtual environment in windows to install reuirments.txt file in the virtual environment.
+# 🏁 Hackathon Submission
 
-`python -m venv myenv`
+This repository contains solutions for two tasks:
 
-`cd myenv\Scripts`
+- **Task A**: Gender Classification
+- **Task B**: Face Recognition
 
-`activate.bat`
+Each task is organized in its respective folder: `Task_A/` and `Task_B/`.
 
-`pip install requirments.txt`
+---
 
+## 🔧 Environment Setup
 
-## Dataset Download
-Dataset downloaded from hackathon website. It is unzip in `Comsys_Hackathon5` folder in this github repo. But due to limitation we can not provide full dataset here only dataset structure is given.
+To set up the environment and install required dependencies, follow the steps below:
 
-## Gender Classification 
-Befor procced to python file pls use `unzip.py` to extract model from zip file
-Task A – Gender Classification 
-The evaluation Metrics are used to test the model performance are 1) Accuracy 2) Precision 3) Recall 4) F1-Score.
+1. Create a virtual environment:
 
-|Dataset| Accuracy| Precision| Recall| F1-Score|
-|--------------|:----:|:------:|:-----:|:------:|
-|Training set| 0.9590|0.9663 |0.9590 |0.9607 |
-|Validation set |0.9360 |0.9460 |0.9360  |0.9385|
-|Test set | | | | |
+   ```bash
+   python -m venv myenv
+   ```
 
+2. Activate the virtual environment (Windows):
 
-In the dataset training and validation data are given. and test dataset is hidden for this in table test set row is intentionally left blank. 
+   ```bash
+   cd myenv\Scripts
+   activate.bat
+   ```
 
-Before run the below script we have to open the Task_A folder. Use below command:
+3. Install dependencies:
 
-`cd Task_A`
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+> 💡 For Linux or Mac, use `source myenv/bin/activate` to activate and `python3` instead of `python`.
 
-To perform the training and validation a clean code is given in a python jupyter file named as :
-`taskatrainscript.ipynb`
+---
 
-To perform testing on unseen data and generate the result of said metrics we can run `testunseen.py` file. To run the file please refer below command line code
+## 📂 Dataset Download & Structure
 
-`python testunseen.py --dataset '/path'`
+The dataset is provided via the hackathon website and must be manually downloaded and extracted.
 
-To run linux environment with python 3.10.X version pls use `python3` insted of  ` python` in the command line.  
-## Face Recognition
+- After downloading, unzip the dataset into the folder `Comsys_Hackathon5/` (structure shown in repo).
+- **Note**: Due to size limitations, the full dataset is not included in this repository. Only the folder structure is shown.
 
-Task A – Gender Classification 
-The evaluation Metrics are used to test the model performance are  1) Top-1 Accuracy 2) Macro-averaged F1-Score
+---
 
-|Dataset| Top-1 Accuracy| Macro-averaged F1-Score|
-|--------------|:----:|:------:|
-|Training set| | |
-|Validation set | | |
-|Test set | | |
+## 🧠 Task A: Gender Classification
 
+Please refer to the `Task_A/` folder for scripts related to Gender Classification. Details about training, testing, and evaluation scripts are documented inside the folder.
 
-In the dataset training and validation data are given. and test dataset is hidden for this in table test set row is intentionally left blank. 
+### 📝 Preprocessing
 
-Before run the below script we have to open the Task_B folder. Use below command:
+Before proceeding, extract the model archive using:
 
-`cd Task_B`
+```bash
+python unzip.py
+```
 
-To perform the training and validation a clean code is given in a python jupyter file named as :
-`taskbtrainscript.ipynb`
+### 📊 Evaluation Metrics
 
-To perform testing on unseen data and generate the result of said metrics we can run `testunseen.py` file. To run the file please refer below command line code
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1-Score**
 
-`python testunseen.py --dataset '/path'`
+| Dataset        | Accuracy | Precision | Recall | F1-Score |
+|----------------|----------|-----------|--------|----------|
+| Training set   | 0.9590   | 0.9663    | 0.9590 | 0.9607   |
+| Validation set | 0.9360   | 0.9460    | 0.9360 | 0.9385   |
+| Test set       | *Hidden* | *Hidden*  | *Hidden* | *Hidden* |
 
-To run linux environment with python 3.X.X version pls use `python3` insted of  ` python` in the command line.  
+> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics are not shown.
 
+### 🚀 Running the Code
+
+1. Navigate to the Task A folder:
+
+   ```bash
+   cd Task_A
+   ```
+
+2. For training and validation:
+   - Open and run the Jupyter notebook: `taskatrainscript.ipynb`
+
+3. For testing on unseen data:
+   - Update the dataset path inside `testunseen.py`
+   - Run:
+
+     ```bash
+     python testunseen.py
+     ```
+
+> 🐧 On Linux: Use `python3` instead of `python`.
+
+---
+
+## 👤 Task B: Face Recognition
+
+Please refer to the `Task_B/` folder for scripts related to face recognition. Details about training, testing, and evaluation scripts are documented inside the folder.
+
+---
+
+### 📊 Evaluation Metrics
+
+- **Top-1 Accuracy**
+- **Macro-averaged F1-Score**
+
+| Dataset        | Top-1 Accuracy | Macro-averaged F1-Score |
+|----------------|----------|-----------|
+| Training set   |    |     |
+| Validation set | 0.8700   |    0.8700 |
+| Test set       | *Hidden* | *Hidden*  |
+
+> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics are not shown.
+
+### 🚀 Running the Code
+
+1. Navigate to the Task A folder:
+
+   ```bash
+   cd Task_B
+   ```
+
+2. For training and validation:
+   - Open and run the Jupyter notebook: `taskbtrainscript.ipynb`
+
+3. For testing on unseen data:
+   - Update the dataset path inside `testunseen.py`
+   - Run:
+
+     ```bash
+     python testunseen.py
+     ```
+
+> 🐧 On Linux: Use `python3` instead of `python`.
+
+## 📎 Requirements
+
+The file `requirements.txt` contains all necessary Python libraries to run both tasks smoothly in the virtual environment.
