@@ -37,9 +37,9 @@ To set up the environment and install required dependencies, follow the steps be
 
 ---
 
-## 📂 Dataset Download & Structure
+To perform testing on unseen data and generate the result of said metrics we can run `testunseen.py` file. pls change dataset path inside the file. To run the file please refer below command line code
 
-The dataset is provided via the hackathon website and must be manually downloaded and extracted.
+`python testunseen.py
 
 - After downloading, unzip the dataset into the folder `Comsys_Hackathon5/` (structure shown in repo).
 - **Note**: Due to size limitations, the full dataset is not included in this repository. Only the folder structure is shown.
