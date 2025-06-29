@@ -127,13 +127,18 @@ Please refer to the `Task_B/` folder for scripts related to face recognition. De
    - Open and run the Jupyter notebook: `taskbtrainscript.ipynb`
 
 3. For testing on unseen data:
-   - Update the dataset path inside `testunseen.py`
+   - Update the dataset path inside `testunseen.py`. This script gives metrics as well as details of matching.
    - Run:
 
      ```bash
      python testunseen.py
      ```
+     -Run: This script will give only metrics
 
+      ```bash
+     python testunseenonlymetric.py
+     ```
+     
 > 🐧 On Linux: Use `python3` instead of `python`.
 
 ## 📎 Requirements
