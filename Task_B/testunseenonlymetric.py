@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score, f1_score
 
 # ========== Configuration ========== #
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-TEST_ROOT = 'C:\\Users\\mrinmoy\\Desktop\\Comys_Hackathon5\\Comys_Hackathon5\\Task_B\\train'  # ✅ UPDATE to your dataset path
+TEST_ROOT = 'C:\\Users\\mrinmoy\\Desktop\\Comys_Hackathon5\\Comys_Hackathon5\\Task_B\\train'  # ✅ UPDATE to your test folder path
 IMG_SIZE = 224
 EMBED_DIM = 256
 N_WAY = 5
@@ -99,7 +99,7 @@ class FewShotDataset:
 
             if valid_episode and support_images and query_images:
                 return (torch.stack(support_images), torch.tensor(support_labels),
-                        torch.stack(query_images), torch.tensor(query_labels), label_mapping)
+                        torch.stack(query_images), torch.tensor(query_labels))
 
 # ========== Model ========== #
 class ProtoNet(nn.Module):
@@ -134,15 +134,13 @@ def predict_protonet(support_embeddings, support_labels, query_embeddings, n_way
     return scores
 
 # ========== Test Script ========== #
-def test_protonet(model, test_dataset, device, n_way=5, n_shot=5, n_query=1, episodes=250):
+def test_protonet(model, test_dataset, device, n_way=5, n_shot=5, n_query=1, episodes=200):
     model.eval()
     all_preds = []
     all_labels = []
 
     for _ in tqdm(range(episodes)):
-        support_x, support_y, query_x, query_y, label_mapping = test_dataset.sample_episode(n_way)
-
-        idx_to_class = {v: k for k, v in label_mapping.items()}
+        support_x, support_y, query_x, query_y = test_dataset.sample_episode(n_way)
 
         support_x, support_y = support_x.to(device), support_y.to(device)
         query_x, query_y = query_x.to(device), query_y.to(device)
@@ -151,23 +149,13 @@ def test_protonet(model, test_dataset, device, n_way=5, n_shot=5, n_query=1, epi
             support_emb = model(support_x)
             query_emb = model(query_x)
             logits = predict_protonet(support_emb, support_y, query_emb, n_way)
-            probs = F.softmax(logits, dim=1)
             preds = logits.argmax(1).cpu().numpy()
             true_labels = query_y.cpu().numpy()
 
         all_preds.extend(preds)
         all_labels.extend(true_labels)
 
-        probs = probs.cpu().numpy()
-        for i in range(len(preds)):
-            true_class = idx_to_class[true_labels[i]]
-            pred_class = idx_to_class[preds[i]]
-            confidence_score = probs[i][preds[i]]
-            match = 1 if preds[i] == true_labels[i] else 0
-
-            print(f"Real: {true_class} | Pred: {pred_class} | Score: {confidence_score:.3f} | Match: {match}")
-
-    # Overall Metrics
+    # Metrics
     top1_acc = accuracy_score(all_labels, all_preds)
     macro_f1 = f1_score(all_labels, all_preds, average='macro')
 
@@ -179,10 +167,20 @@ def test_protonet(model, test_dataset, device, n_way=5, n_shot=5, n_query=1, epi
 if __name__ == "__main__":
     # Load model
     model = ProtoNet().to(DEVICE)
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(MODEL_PATH,map_location=torch.device('cpu')))
 
     # Load test dataset
     test_dataset = FewShotDataset(TEST_ROOT, transform, n_shot=N_SHOT, n_query=N_QUERY)
 
     # Run test
     test_protonet(model, test_dataset, DEVICE, n_way=N_WAY, n_shot=N_SHOT, n_query=N_QUERY, episodes=TEST_EPISODES)
+
+##for val dataset
+#Test Results:
+#Top-1 Accuracy: 0.8700
+#Macro-averaged F1-Score: 0.8700
+
+##for train dataset
+#Test Results:
+#Top-1 Accuracy: 0.9600
+#Macro-averaged F1-Score: 0.9600
