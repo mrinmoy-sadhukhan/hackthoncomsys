@@ -71,7 +71,7 @@ python unzip.py
 | Validation set | 0.9360   | 0.9460    | 0.9360 | 0.9385   |
 | Test set       | *Hidden* | *Hidden*  | *Hidden* | *Hidden* |
 
-> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics are not shown.
+> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics can not be computed
 
 ### 🚀 Running the Code
 
