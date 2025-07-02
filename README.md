@@ -117,7 +117,7 @@ Please refer to the `Task_B/` folder for scripts related to face recognition. De
 | Validation set | 0.8700   |   0.8700  |
 | Test set       | *Hidden* | *Hidden*  |
 
-> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics are not shown.
+> 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics can not be computed.
 
 ### 🚀 Running the Code
 
