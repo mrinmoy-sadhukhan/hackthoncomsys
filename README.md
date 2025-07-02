@@ -84,7 +84,7 @@ python unzip.py
 2. For training and validation:
    - Open and run the Jupyter notebook: `taskatrainscript.ipynb`
 
-3. For testing on unseen data:
+3. For testing on unseen data with accuracy, precision, recall, F1-score:
    - Update the dataset path inside `testunseen.py`
    - Run:
 
@@ -92,6 +92,10 @@ python unzip.py
      python testunseen.py
      ```
 
+4. For testing on unseen data with accuracy, generalization, fairness, accuracy, precision, recall, F1-score metrics
+   - Update the dataset path inside `testunseenallmetricc.ipynb`
+   - Open and Run the `.ipynb` file
+     
 > 🐧 On Linux: Use `python3` instead of `python`.
 
 ---
