@@ -8,11 +8,11 @@ import torchvision.models as models
 from torchvision import transforms
 from PIL import Image
 from tqdm import tqdm
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 # ========== Configuration ========== #
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-TEST_ROOT = 'C:\\Users\\mrinmoy\\Desktop\\Comys_Hackathon5\\Comys_Hackathon5\\Task_B\\train'  # ✅ UPDATE to your dataset path
+TEST_ROOT = 'C:\\Users\\mrinmoy\\Desktop\\Comys_Hackathon5\\Comys_Hackathon5\\Task_B\\val'  # ✅ UPDATE to your dataset path
 IMG_SIZE = 224
 EMBED_DIM = 256
 N_WAY = 5
@@ -170,10 +170,14 @@ def test_protonet(model, test_dataset, device, n_way=5, n_shot=5, n_query=1, epi
     # Overall Metrics
     top1_acc = accuracy_score(all_labels, all_preds)
     macro_f1 = f1_score(all_labels, all_preds, average='macro')
+    macro_precision = precision_score(all_labels, all_preds, average='macro', zero_division=0)
+    macro_recall = recall_score(all_labels, all_preds, average='macro', zero_division=0)
 
     print(f"\nTest Results:")
     print(f"Top-1 Accuracy: {top1_acc:.4f}")
     print(f"Macro-averaged F1-Score: {macro_f1:.4f}")
+    print(f"Macro-averaged Precision: {macro_precision:.4f}")
+    print(f"Macro-averaged Recall: {macro_recall:.4f}")
 
 # ========== Main Execution ========== #
 if __name__ == "__main__":

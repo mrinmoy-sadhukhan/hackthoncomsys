@@ -70,7 +70,7 @@ Please refer to the `Task_A/` folder for scripts related to Gender Classificatio
 
 Link for model in google drive: [<https://drive.google.com/drive/folders/1b2xS0j3aFwVu_pvT_-FOFHMtVif10d3h?usp=sharing>](https://drive.google.com/file/d/16TfRw9X_1U4tYYZ5IGsQwNHdV1Spv0Sp/view?usp=drive_link)
 
-### 📊 Evaluation Metrics
+### 📊 Evaluation Metrics (All data are in %)
 
 - **Accuracy**
 - **Precision**
@@ -79,8 +79,8 @@ Link for model in google drive: [<https://drive.google.com/drive/folders/1b2xS0j
 
 | Dataset        | Accuracy | Precision | Recall | F1-Score |
 |----------------|----------|-----------|--------|----------|
-| Training set   | 0.9590   | 0.9663    | 0.9590 | 0.9607   |
-| Validation set | 0.9360   | 0.9460    | 0.9360 | 0.9385   |
+| Training set   | 95.90   | 96.63    | 95.90 | 96.07   |
+| Validation set | 93.60   | 94.60    | 93.60 | 93.85   |
 | Test set       | *Hidden* | *Hidden*  | *Hidden* | *Hidden* |
 
 > 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics can not be computed
@@ -125,16 +125,17 @@ Please refer to the `Task_B/` folder for scripts related to face recognition and
 
 ---
 
-### 📊 Evaluation Metrics
+### 📊 Evaluation Metrics (All data are in %)
 
 - **Top-1 Accuracy**
 - **Macro-averaged F1-Score**
-
-| Dataset        | Top-1 Accuracy | Macro-averaged F1-Score |
-|----------------|----------|-----------|
-| Training set   | 0.8900   |   0.8900  |
-| Validation set | 0.8700   |   0.8700  |
-| Test set       | *Hidden* | *Hidden*  |
+- **Macro-averaged Precision**
+- **Macro-avergaed Recall**
+| Dataset        | Top-1 Accuracy | Macro-averaged F1-Score | Macro-averaged Precision |Macro-avergaed Recall|
+|----------------|----------|-----------|------------|----------|
+| Training set   | 85.98   |   85.98  |85.98|85.98|
+| Validation set | 86.16  |   86.16  |86.16|86.16|
+| Test set       | *Hidden* | *Hidden*  |*Hidden*|*Hidden*|
 
 > 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics can not be computed.
 
@@ -150,14 +151,14 @@ Please refer to the `Task_B/` folder for scripts related to face recognition and
    - Open and run the Jupyter notebook: `taskbtrainscript.ipynb`
 
 3. For testing on unseen data:
-   - Update the dataset path inside `testunseenallmetricc.py`. This script gives metrics Top-1 Accuracy, Macro-averaged F1-Score as well as details of matching (said in webapge and email).
+   - Update the dataset path inside `testunseenallmetricc.py`. This script gives metrics Top-1 Accuracy, Macro-averaged F1-Score, Macro-averaged Precision and Macro-avergaed Recall as well as details of matching (said in webapge and email).
    - Run:
 
      ```bash
      python testunseenallmetricc.py
      ```
 
-4. For testing on unseen data with  Top-1 Accuracy, Macro-averaged F1-Score metrics as well as details of matching (said in webapge and email) on kaggle or google colab or editor supported `.ipynb` file.
+4. For testing on unseen data with  Top-1 Accuracy, Macro-averaged F1-Score metrics, Macro-averaged Precision and Macro-avergaed Recall as well as details of matching (said in webapge and email) on kaggle or google colab or editor supported `.ipynb` file.
    - Update the dataset path inside `testunseenallmetricc.ipynb`
    - Run the file.
 
