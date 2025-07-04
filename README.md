@@ -59,9 +59,9 @@ In local machine with internet connection, perform testing on unseen data and ge
 
 ### Model Architecture
 
-For Task A, we used the CoAtNet-0 architecture from the TIMM library—a hybrid of convolution 
-and self-attention for capturing both local and global features. We replaced its final layer with a 
-binary classifier for gender prediction. CoAtNet-0 was selected for its efficiency on small datasets 
+For Task A, we used the CoAtNet-0 architecture from the TIMM library—a hybrid of convolution
+and self-attention for capturing both local and global features. We replaced its final layer with a
+binary classifier for gender prediction. CoAtNet-0 was selected for its efficiency on small datasets
 and strong generalization, even when trained from scratch
 
 Please refer to the `Task_A/` folder for scripts related to Gender Classification. Details about training, testing, and evaluation scripts are documented inside the folder.
@@ -116,9 +116,9 @@ Link for model in google drive: [<https://drive.google.com/drive/folders/1b2xS0j
 
 ### Model Architecture
 
-For identity recognition, we implemented a Prototypical Network (ProtoNet) using ResNet-18 as the 
-feature extractor, followed by a projection head that maps embeddings to a 256-dimensional latent 
-space. This approach is ideal for low-shot learning with limited clean/distorted face samples per 
+For identity recognition, we implemented a Prototypical Network (ProtoNet) using ResNet-18 as the
+feature extractor, followed by a projection head that maps embeddings to a 256-dimensional latent
+space. This approach is ideal for low-shot learning with limited clean/distorted face samples per
 identity.
 
 Please refer to the `Task_B/` folder for scripts related to face recognition and matching. Details about training, testing, and evaluation scripts are documented inside the folder.
@@ -177,4 +177,3 @@ Technical summary is given in `COMSYS_Hackathon5_Technical_Summary.pdf` file.
 ## :people_holding_hands: Credits
 
 Soumya Pal and Mrinmoy Sadhukhan reserach scholar of Visva Bharati University.
-
