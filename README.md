@@ -133,9 +133,9 @@ Please refer to the `Task_B/` folder for scripts related to face recognition and
 - **Macro-avergaed Recall**
 | Dataset        | Top-1 Accuracy | Macro-averaged F1-Score | Macro-averaged Precision |Macro-avergaed Recall|
 |----------------|----------|-----------|------------|----------|
-| Training set   | 85.98   |   85.98  |85.98|85.98|
-| Validation set | 86.16  |   86.16  |86.16|86.16|
-| Test set       | *Hidden* | *Hidden*  |*Hidden*|*Hidden*|
+| Training set   | 85.98   |   85.98  | 85.98 | 85.98 |
+| Validation set | 86.16  |   86.16  | 86.16 | 86.16 |
+| Test set       | *Hidden* | *Hidden*  | *Hidden* | *Hidden* |
 
 > 🚫 The test dataset is hidden as per the competition rules, so its evaluation metrics can not be computed.
 
